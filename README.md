@@ -3,7 +3,7 @@
 **MONAD COMBINE TESTNET** — это бот для автоматизации взаимодействия с блокчейном monad testnet.  
 
 ## Функционал бота:  
-- Покупки MON на [gas.zip](https://www.gas.zip/)
+- Покупкa MON на [gas.zip](https://www.gas.zip/)
 - Свап Sepolia ETH на MON
 - Свапы [uniswap,](https://app.uniswap.org/swap) [bean.exchange](https://swap.bean.exchange/swap)
 - Деплой контрактов на [Owlto](https://owlto.finance/deploy/?chain=MonadTestnet)
