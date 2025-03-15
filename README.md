@@ -9,6 +9,7 @@
 - Деплой контрактов на [Owlto](https://owlto.finance/deploy/?chain=MonadTestnet)
 - Минт nft [magiceden,](https://magiceden.io/mint-terminal/monad-testnet) [morkie](https://morkie.xyz/)
 - Добавление/вывод ликвидности [apriori,](https://stake.apr.io/) [magma,](https://www.magmastaking.xyz/) [kintsu](https://kintsu.xyz/staking)
+- Регистрация/aвторизация и клейм наград на [superboard](https://superboard.xyz/quests/)
 - Режим случайных транзакций
 - Проверка баланса на кошельках и кол-во транзакций
 
