@@ -6,6 +6,7 @@
 - Покупкa MON на [gas.zip](https://www.gas.zip/)
 - Свап Sepolia ETH на MON
 - Свапы [uniswap,](https://app.uniswap.org/swap) [bean.exchange](https://swap.bean.exchange/swap)
+- Покупка DAK, YAKI, CHOG с [оф. сайта](https://testnet.monad.xyz/)
 - Деплой контрактов на [owlto](https://owlto.finance/deploy/?chain=MonadTestnet)
 - Минт nft [magiceden,](https://magiceden.io/mint-terminal/monad-testnet) [morkie](https://morkie.xyz/)
 - Добавление/вывод ликвидности [apriori,](https://stake.apr.io/) [magma,](https://www.magmastaking.xyz/) [kintsu](https://kintsu.xyz/staking)
