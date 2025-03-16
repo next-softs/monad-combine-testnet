@@ -13,7 +13,7 @@ class GeneralSettings:
     precision = [4, 8]
 
     # задержки между стартом аккаунтов
-    delay_start = [300, 3600]
+    delay_start = [30, 600]
 
 class GasZipSettings:
     # сколько тратим ETH [от, до]
@@ -43,7 +43,7 @@ class SwapHouseSettings:
     coins = ["CHOG", "YAKI", "DAK"]
 
     # задержка между свапами [от, до]
-    delay = [5, 60]
+    delay = [5, 20]
 
 class MintNftSettings:
     # макс. стоимость NFT в MON
@@ -94,7 +94,7 @@ class SwapsSettings:
     delay_swap = [15, 60]
 
     # задержка между сессиями
-    delay_sessions = [3600*12, 3600*36]
+    delay_sessions = [3600, 3600]
 
 class StakeSettings:
     # какие используем сервисы для стейкинга ["apriori", "kintsu", "magma", "shmonad"]
@@ -129,7 +129,7 @@ class RandomSettings:
     delay_actions = [60, 600]
 
     # задержка между сессиями [от, до]
-    delay_sessions = [3600*8, 3600*24]
+    delay_sessions = [3600, 3600]
 
 
 class SuperboardSettings:
