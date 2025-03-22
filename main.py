@@ -31,6 +31,8 @@ def start_action(action):
             start_func(sepolia_eth_to_mon, accounts)
 
     elif action == "Минт NFT":
+        action = get_action(["Morkie NFT", "Magiceden NFT"])
+        
         if action == "Morkie NFT":
             start_func(mint_nft_morkie, accounts)
         elif action == "Magiceden NFT":
