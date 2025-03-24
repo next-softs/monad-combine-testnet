@@ -1,4 +1,4 @@
-# === MONAD COMBINE TESTNET 1.0 ===
+# === MONAD COMBINE TESTNET 1.1 ===
 
 **MONAD COMBINE TESTNET** — это бот для автоматизации взаимодействия с блокчейном monad testnet.  
 
@@ -13,6 +13,7 @@
 - Регистрация/aвторизация и клейм наград на [superboard](https://superboard.xyz/quests/)
 - Режим случайных транзакций
 - Проверка баланса на кошельках и кол-во транзакций
+- Накрутка транзакций на [gas.zip](https://www.gas.zip/) и [клейм](https://www.gas.zip/faucet/monad) MON
 
 ## Параметры:  
 - Настройка в файле `config.py`
