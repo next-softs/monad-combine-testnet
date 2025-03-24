@@ -2,12 +2,13 @@ from utils.logs import logger
 from config import *
 
 from concurrent.futures import ThreadPoolExecutor
-import random, time
+import random, time, threading
 
 from .swap import swap
 from .stake import stake
 from .deploy import deploy
 from .swap_house_coins import swap_house_coins
+from .faucets import faucet_gas_zip
 
 
 def start_actions(acc):
@@ -35,8 +36,11 @@ def start_actions(acc):
         logger.info(f"ожидаем {timeout} сек. перед стартом следующего действия")
         time.sleep(timeout)
 
-
 def random_actions(accounts):
+    faucets = {"gas.zip": faucet_gas_zip}
+    for faucet in RandomSettings.faucets:
+        threading.Thread(target=faucets[faucet], args=(accounts,)).start()
+
     random.shuffle(accounts)
 
     accs = []

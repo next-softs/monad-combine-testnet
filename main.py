@@ -3,19 +3,20 @@ from models.accounts import Accounts
 from utils.first_message import first_message, get_action
 from utils.logs import logger
 
+
 from core.stake import stake
 from core.deploy import deploy
 from core.starter import start_func
+from core.faucets import faucet_gas_zip
 from core.mint_nft import mint_nft_morkie
 from core.account_info import account_info
 from core.superboard import execute_quests
 from core.mint_nft import mint_nft_magiceden
-from core.gas_zip_bridge import gas_zip_bridge
 from core.swap_house_coins import swap_house_coins
 from core.sepolia_eth_to_mon import sepolia_eth_to_mon
 from core.swap import swap, random_swaps, swap_tokens_to_mon
 from core.random_actions import random_actions, start_actions
-
+from core.gas_zip_bridge import gas_zip_bridge, spam_transactions
 
 def start_action(action):
     accounts_manager = Accounts()
@@ -31,6 +32,8 @@ def start_action(action):
             start_func(sepolia_eth_to_mon, accounts)
 
     elif action == "Минт NFT":
+        action = get_action(["Morkie NFT", "Magiceden NFT"])
+
         if action == "Morkie NFT":
             start_func(mint_nft_morkie, accounts)
         elif action == "Magiceden NFT":
@@ -46,6 +49,17 @@ def start_action(action):
         elif action == "Перевести все монеты в MON":
             start_func(swap_tokens_to_mon, accounts)
 
+    elif action == "Краны":
+        action = get_action(["gas.zip"])
+
+        if action == "gas.zip":
+            action = get_action(["Накрутка транзакций", "Клейм монет"])
+
+            if action == "Накрутка транзакций":
+                start_func(spam_transactions, accounts)
+            elif action == "Клейм монет":
+                faucet_gas_zip(accounts)
+
     elif action == "Стейкинг":
         start_func(stake, accounts)
 
@@ -59,7 +73,7 @@ def start_action(action):
         start_func(execute_quests, accounts)
 
 def main():
-    action = get_action(["Рандомные действия", "Баланс и кол-во транзакций", "Получить монеты MON", "Минт NFT", "Свапы", "Стейкинг", "Получить награды Superboard"])
+    action = get_action(["Рандомные действия", "Получить награды Superboard", "Баланс и кол-во транзакций", "Получить монеты MON", "Минт NFT", "Стейкинг", "Свапы", "Краны"])
     start_action(action)
 
 

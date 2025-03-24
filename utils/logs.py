@@ -33,4 +33,3 @@ def logging_setup():
 
 
 logging_setup()
-

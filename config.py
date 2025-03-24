@@ -13,17 +13,32 @@ class GeneralSettings:
     precision = [4, 8]
 
     # задержки между стартом аккаунтов
-    delay_start = [30, 600]
+    delay_start = [300, 3600]
 
 class GasZipSettings:
-    # сколько тратим ETH [от, до]
+    # сколько тратим ETH на покупку MON [от, до]
     amounts = [0.0001, 0.00015]
 
-    # сети которые можем использовать ["op", "arb", "base"]
+    # сети которые можем использовать для покупки MON ["op", "arb", "base", "unichan"]
     chains = ["op", "arb", "base"]
 
     # если баланс в MON < указанного, то бриджим
     max_amount = 0.001
+
+    # сколько бриджим ETH для накрутки транзакций [от, до]
+    amounts_transactions = [0.00065, 0.00075]
+
+    # сети которые можем использовать для покупки MON ["op", "arb", "base", "unichan"]
+    chains_transactions = ["op", "unichan"]
+
+    # задержки между бриджами
+    delay_transactions = [10, 20]
+
+    # сколько на кошельке должно быть транзакций
+    count_transactions = 11
+
+    # бриджить в одну и туже сеть, если True бот может отправить транзакцию из base в base
+    use_same_chain = False
 
 class SepoliaToMonSettings:
     # сколько тратим на MON [от, до] | минимальный объём 0.02
@@ -43,7 +58,7 @@ class SwapHouseSettings:
     coins = ["CHOG", "YAKI", "DAK"]
 
     # задержка между свапами [от, до]
-    delay = [5, 20]
+    delay = [5, 60]
 
 class MintNftSettings:
     # макс. стоимость NFT в MON
@@ -94,7 +109,7 @@ class SwapsSettings:
     delay_swap = [15, 60]
 
     # задержка между сессиями
-    delay_sessions = [3600, 3600]
+    delay_sessions = [3600*12, 3600*36]
 
 class StakeSettings:
     # какие используем сервисы для стейкинга ["apriori", "kintsu", "magma", "shmonad"]
@@ -105,7 +120,7 @@ class StakeSettings:
 
     # вероятность того, что выведем все MON из стейкинга
     # 10 - значит с 10% шансом все выводим, 0 - не выводить, 100 - выводить всегда если баланс больше 0
-    withdraw = 10
+    withdraw = 90
 
     # кол-во действий за сессию
     repeat_count = [0, 3]
@@ -129,8 +144,10 @@ class RandomSettings:
     delay_actions = [60, 600]
 
     # задержка между сессиями [от, до]
-    delay_sessions = [3600, 3600]
+    delay_sessions = [3600*8, 3600*24]
 
+    # использовать кран ["gas.zip"]
+    faucets = ["gas.zip"]
 
 class SuperboardSettings:
     # выполнять квесты только monad
