@@ -21,12 +21,17 @@ def faucet_gas_zip(accounts):
     random.shuffle(accs_info)
 
     def next_claim(info_wallet):
-        if info_wallet["last_claim_time"] > 0:
-            claim_time = info_wallet["last_claim_time"] + 3600 * 12 + 1
-            logger.info(f"{client.acc_name} следующий клейм {datetime.datetime.fromtimestamp(claim_time)}")
+        if "next_claim_time" in info_wallet and info_wallet["next_claim_time"] > 0:
+            claim_time = info_wallet["next_claim_time"]
         else:
-            claim_time = int(time.time() + 3600 * 12 + 1)
+            if info_wallet["last_claim_time"] > 0:
+                claim_time = info_wallet["last_claim_time"] + 3600 * 12 + 1
 
+            else:
+                claim_time = int(time.time() + 3600 * 12 + 1)
+
+        claim_time += random.randint(*RandomSettings.delay_faucets)
+        logger.info(f"{client.acc_name} следующий клейм {datetime.datetime.fromtimestamp(claim_time)}")
         return claim_time
 
     while True:
