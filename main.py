@@ -1,8 +1,11 @@
+import threading
+import time
+
 from models.accounts import Accounts
 
 from utils.first_message import first_message, get_action
 from utils.logs import logger
-
+from config import *
 
 from core.stake import stake
 from core.deploy import deploy
@@ -12,11 +15,13 @@ from core.mint_nft import mint_nft_morkie
 from core.account_info import account_info
 from core.superboard import execute_quests
 from core.mint_nft import mint_nft_magiceden
+from core.monad_pizza import start_monad_pizza
 from core.swap_house_coins import swap_house_coins
 from core.sepolia_eth_to_mon import sepolia_eth_to_mon
 from core.swap import swap, random_swaps, swap_tokens_to_mon
 from core.random_actions import random_actions, start_actions
 from core.gas_zip_bridge import gas_zip_bridge, spam_transactions
+
 
 def start_action(action):
     accounts_manager = Accounts()
@@ -67,16 +72,25 @@ def start_action(action):
         start_func(account_info, accounts)
 
     elif action == "Рандомные действия":
+        if RandomSettings.monad_pizza:
+            threading.Thread(target=start_monad_pizza, args=(accounts,)).start()
+
         random_actions(accounts)
 
     elif action == "Получить награды Superboard":
         start_func(execute_quests, accounts)
 
+    elif action == "Monad.Pizza":
+        start_monad_pizza(accounts.copy())
+
+
 def main():
-    action = get_action(["Рандомные действия", "Получить награды Superboard", "Баланс и кол-во транзакций", "Получить монеты MON", "Минт NFT", "Стейкинг", "Свапы", "Краны"])
+    action = get_action(["Рандомные действия", "Получить награды Superboard", "Баланс и кол-во транзакций", "Получить монеты MON", "Monad.Pizza", "Минт NFT", "Стейкинг", "Свапы", "Краны"])
     start_action(action)
 
 
 if __name__ == '__main__':
     first_message()
     main()
+
+

@@ -4,7 +4,7 @@ class GeneralSettings:
     useProxies = True
 
     # кол-во потоков
-    threads = 3
+    threads = 10
 
     # сколько одновременно запускать аккаунтов
     start_accs = 3
@@ -87,14 +87,14 @@ class MintNftSettings:
     delay = [5, 60]
 
 class SwapsSettings:
-    # какими дексами пользуемся во время свапов ["Uniswap", "BeanExchange"]
-    exchanges = ["BeanExchange"]
+    # какими дексами пользуемся во время свапов ["Uniswap", "BeanExchange", "Monorail", "OctoExchange"]
+    exchanges = ["BeanExchange", "Monorail", "OctoExchange"]
 
     # объём MON который тратим на покупку монет [от, до]
     amounts = [0.01, 0.1]
 
     # монеты которые используем при свапах ["MON", "USDC", "USDT", "ETH", "WETH", "WBTC", "DAK", "MUK", "CHOG", "YAKI"]
-    coins = ["MON", "USDC", "ETH", "WETH", "DAK", "MUK", "CHOG", "YAKI"]
+    coins = ["MON", "USDC", "DAK", "MUK", "CHOG", "YAKI"]
 
     # начинаем принудительно продавать монеты, если баланс MON меньше заданного
     min_balance_mon = 0.3
@@ -138,16 +138,19 @@ class RandomSettings:
     }
 
     # кол-во действий за сессию [от, до]
-    repeat_count = [0, 3]
+    repeat_count = [1, 3]
 
     # задержка между повторениями внутри сессии [от, до]
     delay_actions = [60, 600]
 
     # задержка между сессиями [от, до]
-    delay_sessions = [3600*8, 3600*24]
+    delay_sessions = [3600*3, 3600*12]
 
     # использовать кран ["gas.zip"]
     faucets = ["gas.zip"]
+
+    # включить/отключить работу monad.pizza True/False
+    monad_pizza = True
 
 class SuperboardSettings:
     # выполнять квесты только monad
@@ -158,5 +161,31 @@ class SuperboardSettings:
 
     # задержка между выполнением квестов [от, до]
     delay_quest = [10, 30]
+
+class MonadPizzaSettings:
+    # рефереры выбирается случайный, если поставить [], то аккаунт не будет рефералом
+    referrer_address = ["0x0000000000000000000000000000000000000000", "0x0000000000000000000000000000000000000000"]
+
+    # сколько делаем кликов перед запуском автокликера [от, до]
+    clicks = [0, 2]
+
+    # доп. задержка между кликами [от, до]
+    delay_clicks = [2, 15]
+
+    # покупать пропуски True/False
+    buy_battle_pass = True
+
+    # задержки между клеймами пропусков [от, до]
+    delay_battle_pass = [5, 30]
+
+    # автоматически клеймить доступны бейджи True/False
+    badges_claim = True
+
+    # задержки между клеймами бейджей [от, до]
+    delay_badges = [5, 30]
+
+
+
+
 
 

@@ -14,6 +14,7 @@ class Default:
         self.session = create_session(proxy)
         self.w3 = Web3(Web3.HTTPProvider(rpc, session=self.session))
         self.chain_id = self.w3.eth.chain_id
+        self.rpc = rpc
 
         self.private_key = private_key
         self.address = self.w3.eth.account.from_key(self.private_key).address

@@ -1,3 +1,4 @@
+import json
 
 def txt_to_list(name):
     resp = []
@@ -14,3 +15,13 @@ def append_to_txt(name, message):
     with open(f"data/{name}.txt", "a", encoding="utf-8") as f:
         f.write(message + "\n")
 
+def get_json(name):
+    resp = []
+
+    try:
+        with open(f"data/{name}.json", "r", encoding="utf-8") as f:
+            resp = json.loads(f.read())
+    except:
+        pass
+
+    return resp

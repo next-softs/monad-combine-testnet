@@ -25,4 +25,6 @@ def data_decoder(data):
 
     return data
 
-
+def split_data(s, chunk_size=64):
+    s = s.replace("0x", "")
+    return [s[i:i + chunk_size] for i in range(0, len(s), chunk_size)]
