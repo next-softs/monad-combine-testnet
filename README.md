@@ -1,11 +1,11 @@
-# === MONAD COMBINE TESTNET 1.1 ===
+# === MONAD COMBINE TESTNET 1.2 ===
 
 **MONAD COMBINE TESTNET** — это бот для автоматизации взаимодействия с блокчейном monad testnet.  
 
 ## Функционал бота:  
 - Покупкa MON на [gas.zip](https://www.gas.zip/)
 - Свап Sepolia ETH на MON
-- Свапы [uniswap,](https://app.uniswap.org/swap) [bean.exchange](https://swap.bean.exchange/swap)
+- Свапы [Uniswap,](https://app.uniswap.org/swap) [Bean.Exchange](https://swap.bean.exchange/swap) [OctoSwap,](https://octo.exchange/swap) [Monorail](https://testnet-preview.monorail.xyz/)
 - Покупка DAK, YAKI, CHOG с [оф. сайта](https://testnet.monad.xyz/)
 - Деплой контрактов на [owlto](https://owlto.finance/deploy/?chain=MonadTestnet)
 - Минт nft [magiceden,](https://magiceden.io/mint-terminal/monad-testnet) [morkie](https://morkie.xyz/)
@@ -14,6 +14,7 @@
 - Режим случайных транзакций
 - Проверка баланса на кошельках и кол-во транзакций
 - Накрутка транзакций на [gas.zip](https://www.gas.zip/) и [клейм](https://www.gas.zip/faucet/monad) MON
+- Клики/Покупка автокликера/Клейм бейджей и билетов [Monad.Pizza](https://monad.pizza/)
 
 ## Параметры:  
 - Настройка в файле `config.py`

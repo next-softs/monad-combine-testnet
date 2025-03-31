@@ -13,7 +13,7 @@ class GeneralSettings:
     precision = [4, 8]
 
     # задержки между стартом аккаунтов
-    delay_start = [300, 3600]
+    delay_start = [60, 600]
 
 class GasZipSettings:
     # сколько тратим ETH на покупку MON [от, до]
@@ -109,7 +109,7 @@ class SwapsSettings:
     delay_swap = [15, 60]
 
     # задержка между сессиями
-    delay_sessions = [3600*12, 3600*36]
+    delay_sessions = [600, 3600]
 
 class StakeSettings:
     # какие используем сервисы для стейкинга ["apriori", "kintsu", "magma", "shmonad"]
@@ -144,7 +144,7 @@ class RandomSettings:
     delay_actions = [60, 600]
 
     # задержка между сессиями [от, до]
-    delay_sessions = [3600*3, 3600*12]
+    delay_sessions = [600, 3600]
 
     # использовать кран ["gas.zip"]
     faucets = ["gas.zip"]
