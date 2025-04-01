@@ -41,7 +41,7 @@ def faucet_gas_zip(accounts):
                 if time.time() > acc_info["claim_time"]:
                     info_wallet = client.get_info_wallet()
 
-                    if info_wallet["last_claim_time"] == 0 and info_wallet["num_deposits"] >= 10:
+                    if info_wallet["eligibility"] == "UNCLAIMED" and info_wallet["num_deposits"] >= 10:
                         client.claim()
                         time.sleep(3)
 
@@ -51,7 +51,7 @@ def faucet_gas_zip(accounts):
                             acc_info["claim_time"] = next_claim(info_wallet)
                             continue
 
-                    elif info_wallet["num_deposits"] >= 10 and info_wallet["last_claim_time"] >= 0:
+                    elif info_wallet["num_deposits"] >= 10:
                         acc_info["claim_time"] = next_claim(info_wallet)
                         continue
 
