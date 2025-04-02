@@ -3,6 +3,7 @@ from utils.encode import get_data_byte64
 from models.chains import Chains
 from utils.logs import logger
 
+
 class GasZip(Default):
     def __init__(self, account, chain):
         super().__init__(account.private_key, chain.rpc, [], "", account.proxy)

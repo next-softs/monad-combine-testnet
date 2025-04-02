@@ -60,7 +60,10 @@ class Default:
                 logger.error(f'{self.acc_name} {desc + " " if desc else ""}{data.get("transactionHash").hex()}')
 
         except Exception as e:
-            err = data_decoder(e.data)
+            err = None
+            try: err = data_decoder(e.data)
+            except: pass
+
             if not err: err = e
 
             logger.error(f'{self.acc_name} {desc + " " if desc else ""}| Error: {err}')

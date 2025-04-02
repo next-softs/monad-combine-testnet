@@ -29,7 +29,7 @@ class Uniswap(Default):
         return resp.json()
 
     def get_api_key(self):
-        resp = self.session.get("https://app.uniswap.org/static/js/604.670a9ada.chunk.js")
+        resp = self.session.get("https://app.uniswap.org/static/js/main.5ff8e115.js")
         return resp.text.split('REACT_APP_TRADING_API_KEY:"')[1].split('"')[0]
 
     def get_quote(self, in_token, out_token, in_amount):

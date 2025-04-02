@@ -43,11 +43,12 @@ def monad_pizza(acc):
                 client.sleep(MonadPizzaSettings.delay_battle_pass)
 
         # клеймим бейджи
-        if False and MonadPizzaSettings.badges_claim:
-            user_info = client.get_user_info()
-            for nft_id in user_info["activeNFTBonusIds"]:
-                client.claim_badge()
-                client.sleep(MonadPizzaSettings.delay_badges)
+        if MonadPizzaSettings.badges_claim:
+            badges_info = client.get_info_badges()
+            for badge in badges_info:
+                if badge["isAvailable"] and not badge["isMint"]:
+                    client.claim_badge(badge["tokenId"], badge["price"], badge["name"])
+                    client.sleep(MonadPizzaSettings.delay_badges)
 
         # запускаем автокликер
         if time_now > acc["click_time"] and time_now > acc["auto_click_time"]:
